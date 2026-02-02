@@ -1,28 +1,16 @@
-import { Code2, Database, Server, Zap } from 'lucide-react';
+import {Code2, Database, Server, Zap} from 'lucide-react';
+import {highlights, paragraph} from "../data/about.ts";
+import { useLanguage } from '../i18n/LanguageContext';
 
 const About = () => {
-  const highlights = [
-    {
-      icon: <Code2 className="w-6 h-6" />,
-      title: 'Clean Code',
-      description: 'Writing maintainable, testable, and scalable code following best practices',
-    },
-    {
-      icon: <Database className="w-6 h-6" />,
-      title: 'Database Design',
-      description: 'Expert in relational database design, optimization, and complex queries',
-    },
-    {
-      icon: <Server className="w-6 h-6" />,
-      title: 'API Development',
-      description: 'Building RESTful APIs and microservices with Spring Boot framework',
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Performance',
-      description: 'Optimizing backend performance and implementing caching strategies',
-    },
-  ];
+  const { lang } = useLanguage();
+  const iconByType = {
+    code: <Code2 className="w-6 h-6" />,
+    db: <Database className="w-6 h-6" />,
+    server: <Server className="w-6 h-6" />,
+    perform: <Zap className="w-6 h-6" />,
+  } as const;
+
 
   return (
     <section id="about" className="py-24 bg-white">
@@ -36,36 +24,23 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
-            <p className="text-lg text-slate-700 leading-relaxed">
-              I'm a passionate backend developer with expertise in building robust,
-              scalable server-side applications. My focus is on creating efficient
-              APIs and database architectures that serve as the foundation for
-              powerful digital experiences.
+            {paragraph.map((content) =>(
+            <p key={content.id} className="text-lg text-slate-700 leading-relaxed">
+            {content.contents[lang]}
             </p>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              With deep knowledge of Java Spring Boot and MySQL, I specialize in
-              developing enterprise-grade solutions that handle complex business
-              logic, ensure data integrity, and deliver exceptional performance
-              under demanding conditions.
-            </p>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              I believe in writing clean, well-documented code and following
-              industry best practices to create systems that are not only
-              functional but also maintainable and scalable for future growth.
-            </p>
+              ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            {highlights.map((highlight, index) => (
+        <div className="grid grid-cols-2 gap-6">
+            {highlights.map((highlight) => (
               <div
-                key={index}
-                className="bg-slate-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-slate-100"
-              >
-                <div className="text-emerald-600 mb-3">{highlight.icon}</div>
+                key={highlight.type}
+                className="bg-slate-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                <div className="text-emerald-600 mb-3">{iconByType[highlight.type]}</div>
                 <h3 className="font-semibold text-slate-900 mb-2">
-                  {highlight.title}
+                  {highlight.title[lang]}
                 </h3>
-                <p className="text-sm text-slate-600">{highlight.description}</p>
+                <p className="text-sm text-slate-600">{highlight.description[lang]}</p>
               </div>
             ))}
           </div>

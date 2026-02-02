@@ -1,44 +1,7 @@
 import { Briefcase, Calendar } from 'lucide-react';
+import {experiences} from "../data/experience.ts";
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: 'Senior Backend Developer',
-      company: 'Tech Innovations Inc.',
-      period: '2022 - Present',
-      description:
-        'Lead backend development for enterprise-level applications using Spring Boot and MySQL. Architected microservices infrastructure and mentored junior developers.',
-      achievements: [
-        'Reduced API response time by 45% through optimization',
-        'Implemented CI/CD pipeline reducing deployment time by 60%',
-        'Led migration from monolithic to microservices architecture',
-      ],
-    },
-    {
-      title: 'Backend Developer',
-      company: 'Digital Solutions Ltd.',
-      period: '2020 - 2022',
-      description:
-        'Developed and maintained RESTful APIs for multiple client projects. Focused on database design, query optimization, and API security.',
-      achievements: [
-        'Built scalable API handling 10M+ requests daily',
-        'Designed database schemas for 5+ major projects',
-        'Improved system performance by 35% through caching',
-      ],
-    },
-    {
-      title: 'Junior Java Developer',
-      company: 'StartUp Ventures',
-      period: '2018 - 2020',
-      description:
-        'Worked on various backend features using Java and Spring framework. Gained experience in full software development lifecycle.',
-      achievements: [
-        'Contributed to core API development',
-        'Implemented unit tests achieving 85% code coverage',
-        'Participated in agile development processes',
-      ],
-    },
-  ];
 
   return (
     <section id="experience" className="py-24 bg-slate-50">
@@ -51,11 +14,10 @@ const Experience = () => {
         </div>
 
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
+          {experiences.map((exp) => (
             <div
-              key={index}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 border-l-4 border-emerald-600"
-            >
+              key={exp.id}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 border-l-4 border-emerald-600">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">
