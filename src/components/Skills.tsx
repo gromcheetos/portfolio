@@ -1,50 +1,7 @@
+
+import {skillCategories} from "../data/skills.ts";
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: 'Backend Development',
-      skills: [
-        { name: 'Java', level: 95 },
-        { name: 'Spring Boot', level: 90 },
-        { name: 'Spring Security', level: 85 },
-        { name: 'Hibernate/JPA', level: 88 },
-        { name: 'RESTful APIs', level: 92 },
-        { name: 'Microservices', level: 80 },
-      ],
-    },
-    {
-      title: 'Database',
-      skills: [
-        { name: 'MySQL', level: 90 },
-        { name: 'PostgreSQL', level: 85 },
-        { name: 'MongoDB', level: 75 },
-        { name: 'Redis', level: 80 },
-        { name: 'Database Design', level: 88 },
-        { name: 'Query Optimization', level: 85 },
-      ],
-    },
-    {
-      title: 'Tools & DevOps',
-      skills: [
-        { name: 'Git', level: 90 },
-        { name: 'Docker', level: 85 },
-        { name: 'Maven/Gradle', level: 88 },
-        { name: 'Jenkins/CI-CD', level: 80 },
-        { name: 'Linux', level: 82 },
-        { name: 'AWS', level: 75 },
-      ],
-    },
-    {
-      title: 'Additional Skills',
-      skills: [
-        { name: 'Unit Testing (JUnit)', level: 88 },
-        { name: 'API Documentation', level: 90 },
-        { name: 'Agile/Scrum', level: 85 },
-        { name: 'Problem Solving', level: 92 },
-        { name: 'System Design', level: 87 },
-        { name: 'Performance Tuning', level: 83 },
-      ],
-    },
-  ];
 
   return (
     <section id="skills" className="py-24 bg-slate-50">
