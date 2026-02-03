@@ -1,3 +1,5 @@
+import type { I18nText } from '../i18n/types';
+
 export type ContactItemType = 'email' | 'linkedIn' | 'location';
 
 export interface ContactItem {
@@ -11,14 +13,13 @@ export interface ContactContent {
     heading: string;
     intro: string;
     items: ContactItem[];
-    availableFor: string[];
+    availableFor: I18nText[];
     footerText: string;
 }
 
 export const contactContent: ContactContent = {
     heading: 'Get In Touch',
-    intro:
-        "Interested in working together? Let's discuss your project and how I can help build robust backend solutions.",
+    intro: "Interested in working together? Let's discuss your project and how I can help build robust backend solutions.",
     items: [
         {
             type: 'email',
@@ -39,9 +40,18 @@ export const contactContent: ContactContent = {
         },
     ],
     availableFor: [
-        'Full-time positions',
-        'Freelance projects',
-        'Technical consulting',
+        {
+            en: 'Java backend',
+            ko: '자바 백엔드 개발자'
+        },
+        {
+            en: 'Full-stack',
+            ko: '플스택 개발자'
+        },
+        {
+            en: 'Software engineer',
+            ko: '소프트웨어 엔지니어'
+        }
     ],
     footerText: '© Kim Hanna. All rights reserved.',
 };

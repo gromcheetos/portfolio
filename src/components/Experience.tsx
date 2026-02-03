@@ -1,8 +1,9 @@
 import { Briefcase, Calendar } from 'lucide-react';
 import {experiences} from "../data/experience.ts";
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Experience = () => {
-
+  const { lang } = useLanguage();
   return (
     <section id="experience" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +22,7 @@ const Experience = () => {
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                    {exp.title}
+                    {exp.title[lang]}
                   </h3>
                   <div className="flex items-center space-x-2 text-emerald-600 font-semibold mb-2">
                     <Briefcase size={18} />
@@ -34,18 +35,16 @@ const Experience = () => {
                 </div>
               </div>
               <p className="text-slate-700 mb-4 leading-relaxed">
-                {exp.description}
+                {exp.description[lang]}
               </p>
               <div className="space-y-2">
                 <h4 className="font-semibold text-slate-900">Key Achievements:</h4>
                 <ul className="list-none space-y-2">
                   {exp.achievements.map((achievement, achIndex) => (
-                    <li
-                      key={achIndex}
-                      className="flex items-start space-x-2 text-slate-700"
-                    >
+                    <li key={achIndex}
+                      className="flex items-start space-x-2 text-slate-700">
                       <span className="text-emerald-600 mt-1">▸</span>
-                      <span>{achievement}</span>
+                      <span>{achievement[lang]}</span>
                     </li>
                   ))}
                 </ul>

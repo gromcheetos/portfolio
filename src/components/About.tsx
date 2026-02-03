@@ -2,15 +2,16 @@ import {Code2, Database, Server, Zap} from 'lucide-react';
 import {highlights, paragraph} from "../data/about.ts";
 import { useLanguage } from '../i18n/LanguageContext';
 
+
+const iconByType = {
+  code: <Code2 className="w-6 h-6" />,
+  db: <Database className="w-6 h-6" />,
+  server: <Server className="w-6 h-6" />,
+  perform: <Zap className="w-6 h-6" />,
+} as const;
+
 const About = () => {
   const { lang } = useLanguage();
-  const iconByType = {
-    code: <Code2 className="w-6 h-6" />,
-    db: <Database className="w-6 h-6" />,
-    server: <Server className="w-6 h-6" />,
-    perform: <Zap className="w-6 h-6" />,
-  } as const;
-
 
   return (
     <section id="about" className="py-24 bg-white">

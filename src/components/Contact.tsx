@@ -1,8 +1,10 @@
 import {Linkedin, Mail, MapPin, Send} from 'lucide-react';
 import { useState } from 'react';
 import { contactContent } from '../data/contact';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Contact = () => {
+  const { lang } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,11 +73,11 @@ const Contact = () => {
               <h4 className="font-semibold text-slate-900 mb-3">
                 Available For
               </h4>
-              <ul className="space-y-2 text-slate-700">
+              <ul id="available-for" className="space-y-2 text-slate-700">
                 {contactContent.availableFor.map((item) => (
-                    <li key={item} className="flex items-center space-x-2">
+                    <li key={item.en} className="flex items-center space-x-2">
                       <span className="text-emerald-600">✓</span>
-                      <span>{item}</span>
+                      <span className="leading-relaxed">{item[lang]}</span>
                     </li>
                 ))}
               </ul>

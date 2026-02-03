@@ -18,7 +18,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         localStorage.setItem('lang', lang);
-        document.documentElement.lang = lang; // optional but nice for accessibility/SEO
+        document.documentElement.lang = lang; // accessibility/SEO
     }, [lang]);
 
     const value = useMemo(

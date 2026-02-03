@@ -1,8 +1,9 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ShieldCheck } from 'lucide-react';
 import { projects } from '../data/projects';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Projects = () => {
-
+  const { lang } = useLanguage();
   return (
     <section id="projects" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,10 +22,10 @@ const Projects = () => {
               <div className={`h-2 bg-gradient-to-r ${project.color}`}></div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                  {project.title}
+                  {project.title[lang]}
                 </h3>
                 <p className="text-slate-600 mb-4 leading-relaxed">
-                  {project.description}
+                  {project.description[lang]}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.techStack.map((tech, techIndex) => (
@@ -36,7 +37,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  {project.github && (
+                  {project.github ? (
                   <a href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -44,15 +45,20 @@ const Projects = () => {
                     <Github size={20} />
                     <span className="font-medium">Code</span>
                   </a>
+                  ) :(
+                      <span className="flex items-center space-x-2 text-emerald-600 font-semibold">
+                        <ShieldCheck size={20} />
+                        <span>In Production</span>
+                      </span>
                   )}
-                  {project.demo &&(
-                  <a href={project.demo}
+                  {project.externalLink &&(
+                  <a href={project.externalLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-slate-600 hover:text-emerald-600 transition-colors duration-200">
                     <ExternalLink size={20} />
-                    <span className="font-medium">Demo</span>
-                  </a>
+                    <span className="font-medium">{project.externalLabel === 'production' ? 'Live System' : 'Demo'}</span>
+                    </a>
                   )}
                 </div>
               </div>
