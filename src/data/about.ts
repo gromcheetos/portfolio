@@ -64,22 +64,22 @@ export const paragraph: AboutParagraph[] = [
     {
         id: 1,
         contents: {
-            en: 'I’m a backend developer specializing in building large-scale production systems used in real-world environments...',
-            ko: '저는 실제 운영 환경에서 사용되는 대규모 시스템을 중심으로 개발하는 백엔드 개발자입니다...',
+            en: 'I’m a backend developer specializing in building large-scale, production systems used in real-world environments. My work includes developing nationwide government platforms, enterprise API infrastructures, and high-traffic web applications that require reliability and performance.',
+            ko: '실제 운영 환경에서 사용되는 대규모 시스템을 중심으로 개발하는 백엔드 개발자',
         },
     },
     {
         id: 2,
         contents: {
-            en: 'I focus on Java and Spring architectures, designing secure APIs and scalable systems...',
-            ko: 'Java 및 Spring 기반 아키텍처에서 보안 API와 확장 가능한 시스템을 설계합니다...',
+            en:'I focus on Java and Spring-based architectures, designing secure APIs, complex business workflows, and scalable database structures. I have hands-on experience maintaining live systems, resolving production issues, and continuously improving system stability.',
+            ko: 'Java 및 Spring 기반 아키텍처에서 보안 API와 확장 가능한 시스템을 설계합니다.',
         },
     },
     {
         id: 3,
         contents: {
-            en: 'My approach emphasizes clean architecture and long-term maintainability...',
-            ko: '클린 아키텍처와 장기 유지보수 가능한 구조를 중요하게 생각합니다...',
+            en: 'My approach emphasizes clean architecture, maintainable code, and practical engineering decisions that support long-term growth. I value systems that are not only functional, but resilient and easy for teams to evolve.',
+            ko: '클린 아키텍처와 장기 유지보수 가능한 구조를 중요하게 생각합니다.',
         },
     },
 ];

@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react';
 import {Languages, Menu, X} from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
-const { lang, toggleLang } = useLanguage();
-
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { lang, toggleLang } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +63,7 @@ const Navigation = () => {
               aria-label="Change language"
               title="Change language">
             <Languages size={18} />
-            <span>{lang === 'en' ? 'EN' : 'KO'}</span>
+            <span>{lang === 'en' ? 'KO' : 'EN'}</span>
           </button>
         </div>
 

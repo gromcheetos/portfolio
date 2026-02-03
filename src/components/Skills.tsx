@@ -1,7 +1,8 @@
-
 import {skillCategories} from "../data/skills.ts";
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Skills = () => {
+  const { lang } = useLanguage();
 
   return (
     <section id="skills" className="py-24 bg-slate-50">
@@ -17,17 +18,18 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
+              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                {category.title}
+                {category.title[lang]}
               </h3>
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between mb-2">
                       <span className="text-slate-700 font-medium">
-                        {skill.name}
+                         {lang === 'ko'
+                             ? (skill.nameKo ?? skill.nameEn)
+                             : skill.nameEn}
                       </span>
                       <span className="text-emerald-600 font-semibold">
                         {skill.level}%
