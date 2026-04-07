@@ -57,8 +57,6 @@ export const projects: Project[] =[
         },
         techStack: ['Java', 'Spring Boot', 'MySQL'],
         github: 'https://github.com/gromcheetos/weather-data-analysis',
-        externalLink: 'https://example.com',
-        externalLabel: "demo",
         color: 'from-green-400 to-emerald-500',
     },
     {
@@ -74,5 +72,23 @@ export const projects: Project[] =[
         techStack: ['egov', 'Java', 'MySQL', 'JS', 'SVN'],
         github: 'https://github.com/gromcheetos/donation',
         color: 'from-teal-400 to-cyan-500',
+    },
+    {
+    id: 5,
+        title: {
+            en: 'Intranet Messenger',
+            ko: '사내 인트라넷 메신저'
+        },
+        description: {
+            en: 'Developed a real-time intranet messaging application for internal company communication.\n' +
+                'Implemented WebSocket-based live chat with support for multiple chat rooms and channels, enabling seamless team collaboration within the organization.',
+            ko: 'WebSocket 기반 실시간 채팅 기능과 다중 채팅방 및 채널을 지원하는 사내 인트라넷 메신저 애플리케이션 개발\n' +
+                '조직 내 원활한 팀 협업을 위한 채널별 메시지 분리 및 실시간 송수신 기능 구현'
+        },
+        techStack: ['React', 'TypeScript', 'Spring Boot', 'WebSocket', 'PostgreSQL', 'Github'],
+        github: 'https://github.com/gromcheetos/intranet-messenger.git',
+        externalLink: 'https://intranet-messenger.vercel.app/',
+        externalLabel: 'demo',
+        color: 'from-violet-400 to-purple-500',
     },
 ];
