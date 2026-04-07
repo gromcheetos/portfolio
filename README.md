@@ -1,4 +1,4 @@
-https://portfolio-ochre-seven-61.vercel.app/# 👨‍💻 Developer Portfolio
+👨‍💻 Developer Portfolio
 
 A bilingual (English / Korean) personal portfolio website showcasing my projects and skills as a full-stack developer.
 
