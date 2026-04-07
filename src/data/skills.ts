@@ -28,10 +28,6 @@ export const skillCategories: Skills[] = [
               nameKo: '스프링 부트',
               level: 90
             },
-            { nameEn: 'Spring Security',
-              nameKo: '스프링 시큐어리티',
-              level: 85
-            },
             {
               nameEn: 'Hibernate/JPA',
               level: 88
@@ -42,6 +38,9 @@ export const skillCategories: Skills[] = [
             },
             { nameEn: 'Servlet/JSP',
               level: 80
+            },
+            { nameEn: 'React',
+              level: 80  
             }
         ],
     },
